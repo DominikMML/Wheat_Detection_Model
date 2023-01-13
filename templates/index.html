@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.6.1.min.js"></script>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Wheat Detection Model</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+<div id="element1">
+    </div>
+    <div id="element2">
+        <h2 style="color: #5e9ca0;">Wheat Detection Model (WDM) - Szacowanie wielkości plonu w oparciu o fotograficzną dokumentację in-situ</h2>
+        <p><span style="color: #808080;">Model konwolucyjnej sieci neuronowej identyfikuje liczbę kłosów pszenicy wewnątrz ramy pomiarowej.</span></p>
+    <div class="container main-container">
+    <div class="row">
+        <div class="col-md-10 form-group">
+            <label for="fileInput">Wybierz plik</label>
+            <input href=upload type="file" class="form-control" onchange="ReadImage()" id="fileInput" aria-describedby="fileHelp">
+        </div>
+        <div class="col-md-2 btn-submit-container">
+        <button  type="button" class="btn btn-primary" id="upload">Predykcja</button>
+    </div>
+    </div>
+    <div>
+        <img src="" id="imagePreview" class="image-preview">
+    </div>
+</div>
+
+<p><span></span></p>
+<form method="POST">
+    <div class="container main-container" >
+    <img class="image-previewPredykcja" id="image-previewPredykcja" src="{{ image_path }}" alt="image_path" align="middle" style='height: 60%; width: 60%; object-fit: contain'>
+    </div>
+    <p><strong><span></span></strong></p>
+    <label for="slzk">Średnia liczba ziaren w kłosie:</label>
+    <input class="slzk" name="slzk" value="{{ slzk }}" defaultValue="1000" required/>
+
+    <label for="mtn">Masa 1000 nasion [g]:</label>
+    <input type=text class="mtn" name="mtn" value="{{ mtn }}" defaultValue="1000" required/>
+    
+    <label for="strata">Wielkość szkód[%]:</label>
+    <input type=text class="strata" name="strata" value="{{ strata }}" defaultValue="1000" required/>
+      
+    <input type="submit" class="btn btn-primary" value="Oblicz plonowanie">
+    <p><span><font size="+2">Plonowanie wynosi:<b> {{ plon_w }} dt/ha</b></font></span></p>
+     <div>
+        <img src="{{ filepath }}" id="image-previewTest" class="image-preview">
+    </div>
+</form>
+
+<div id="autorzy">
+    <p>&nbsp;</p>
+    <p><strong><span style="background-color: #ffffff; color: #808080;">Licencja: MIT 2023</span></strong></p>
+    <p><em><span style="background-color: #ffffff; color: #808080;">Dominika Nowak</span></em></p>
+    <p><em><span style="background-color: #ffffff; color: #808080;">Katarzyna Krupa</span></em></p>
+    <p><em><span style="background-color: #ffffff; color: #808080;">Dominik Mielczarek</span></em></p>
+    <p>&nbsp;</p>
+    <p><strong>&nbsp;</strong></p>
+</div> 
+        
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/utils.js') }}">
+</script>
+</html>
+
+
+
