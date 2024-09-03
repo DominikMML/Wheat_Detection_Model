@@ -1,59 +1,53 @@
 # **Wheat Detection Model - WDM**
 ![Logo](https://drive.google.com/uc?export=view&id=1xwnJd3MACXy-L-Rs1TBoWTd3J1RJ7-Se)
 
-## Charakterystyka
-Szacowanie wielkości plonu w oparciu o fotograficzną dokumentację in-situ.
-Oprogramowanie pozwala w łatwy sposób wyznaczyć liczbę kłosów na zdjęciu wykonanym w terenie.
-Program ma na celu usprawnienie i przyśpieszenie pracy terenowej w trakcie kontroli na miejscu.
-Program szacuje plonowanie na podstawie obsady(liczby roślin w ramie pomiarowej 25x25cm).
-Gdy obsada jest zbyt duża, rośliny wykształcają mniejsze (krótsze) kłosy, które zawierają drobniejsze ziarno, o mniejszej masie 1000 ziarn i gęstości.
-Oznacza to, że w takim wypadku plon będzie mniejszy, a jego jakość nie będzie najlepsza. Zwiększa się także podatność roślin na wyleganie.
-Jeśli natomiast obsada kłosów jest zbyt mała, dłuższe kłosy, zawierające większe ziarniaki, nie pozwolą uzyskać zadowalającego plonu.
-Ważne jest także, by obsada kłosów była równomierna dla całej plantacji. 
+## Characteristics
+Yield estimation based on in-situ photographic documentation.
+The software makes it easy to determine the number of ears in a photo taken in the field.
+The program is designed to streamline and speed up field work during in-situ inspections.
+The program estimates yields based on plant density(number of plants in a 25x25cm measuring frame).
+When the plant density is too high, the plants develop smaller (shorter) ears, which contain finer grain, with lower 1,000 grain weight and density.
+This means that in such a case the yield will be lower and the quality will not be the best. The susceptibility of plants to lodging is also increased.
+If, on the other hand, the ear density is too low, longer ears containing larger grains will not allow a satisfactory yield.
+It is also important that the ear density be uniform for the entire plantation. 
 
-## Prawa autorskie
-W oprogramowaniu  zostały zastosowane autorskie rozwiązania oraz gotowe implementacje architektury modelu.
-### Autorzy
-- [@dominowak](https://www.github.com/dominowak)
-- [@kasiakrupa146](https://www.github.com/kasiakrupa146)
-- [@dominikMAI](https://www.github.com/dominikMAI)
-
-### Warunki licencyjne
-Implementacja modelu  (YOLO_v3) wykorzystana w ramach licencji: 
+### License terms and conditions
+Implementation of the model (YOLO_v3) used under the license: 
 [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/)\
-W skryptach udostępnionych na licencji Apache 2.0 nie wprowadzono żadnych zmian. 
+No changes have been made to the scripts released under the Apache 2.0 license. 
 
-Architektura modelu detekcyjnego według artykułu autorstwa J. Redmona i A. Farhada **“YOLOv3: An Incremental Improvement”**
-Metoda szacowania plonowania na podstawie opracowania **"Szacowanie plonów rolniczych"** autorstwa prof. dr hab. Bogdana Kuliga, Uniwersytet Rolniczy w Krakowie.\
+Architecture of the detection model according to the article by J. Redmon and A. Farhad **“YOLOv3: An Incremental Improvement”**
+Yield estimation method based on the study **"Estimating agricultural yields ”** by Prof. Bogdan Kulig, PhD, Agricultural University of Cracow.
 
-Niniejsze oprogramowanie udostępniane jest na licencji **MIT 2023**.
+This software is provided under license **MIT 2023**.
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Specyfika wymagań
-| indeks | opis                                                                                | priorytet  | kategoria        |
-|--------|-------------------------------------------------------------------------------------|------------|------------------|
-| W1     | Program musi być łatwy w użyciu i instalacji                                        | wymagane   | pozafunkcjonalne |
-| W2     | Program powinien zawierać instrukcję obsługi                                        | wymagane   | pozafunkcjonalne |
-| W3     | Oprogramowanie powinno być zdolne do zaczytania dowolnego plik graficznego          | wymagane   | funkcjonalne     |
-| W4     | Oprogramowanie powinno wskazywać lokalizację kłosów pszenicy na obrazie             | wymagane   | funkcjonalne     |
-| W5     | Model musi cechować zdolność do odróżniania kłosów pszenicy wśród innych roślin     | wymagane   | funkcjonalne     |
-| W6     | Model powinien wykrywać przynajmniej 95% wszystkich kłosów pszenicy                 | wymagane   | funkcjonalne     |
-| W7     | Oprogramowanie musi umożliwiać uruchomienie modelu z wykorzystaniem procesora GPU   | wymagane   | funkcjonalne     |
-| W8     | Oprogramowanie musi odczytywać wprowadzane  wartości funkcji plonowania             | wymagane   | funkcjonalne     |
-| W9     | Oprogramowanie musi prawidłowo obliczać szacowane wartości uzysku plonu             | wymagane   | funkcjonalne     |
-| P1     | Program umożliwia zapis ilustracji z wynikiem detekcji w przestrzeni dyskowej       | przydatne  | funkcjonalne     |
-| P2     | Program dostosowuje rozmiar interfejsu do rozmiarów monitora użytkownika            | przydatne  | funkcjonalne     |
-| P3     | Dla poprawy czytelności użytkownik może zmienić kolor obrysu zasięgu                | przydatne  | funkcjonalne     |
-| O1     | Oprogramowanie automatycznie przeprowadza predykcję po zaczytaniu pliku graficznego | opcjonalne | funkcjonalne     |
-| O2     | Oprogramowanie powinno przeprowadzić detekcję w czasię nie dłuższym niż 3 sekundy   | opcjonalne | pozafunkcjonalne |
-| O3     | Interfes dopasowuje język opogramowania do kraju w którym jest wykorzystywany       | opcjonalne | funkcjonalne     |
-| O4     | Język interfejsu wybierany jest z listy                                             | opcjonalne | funkcjonalne     |
-| O5     | Plik graficzny może zostać zaczytany bezpośrednio z lokalizacji sieciowej           | opcjonalne | funkcjonalne     |
-| O6	 | Aplikacja powinna wykonywać detekcję na obrazie prosto z kamery urządzenia		   | opcjonalne | funkcjonalne	   |
+## Specific Requirements
 
-## Stos technologiczny
+| Index | Description                                                                         | Priority   | Category          |
+|-------|-------------------------------------------------------------------------------------|------------|-------------------|
+| W1    | The program must be easy to use and install                                          | required   | non-functional    |
+| W2    | The program should include a user manual                                             | required   | non-functional    |
+| W3    | The software should be capable of reading any image file                             | required   | functional        |
+| W4    | The software should indicate the location of wheat ears in the image                 | required   | functional        |
+| W5    | The model must be able to distinguish wheat ears among other plants                  | required   | functional        |
+| W6    | The model should detect at least 95% of all wheat ears                               | required   | functional        |
+| W7    | The software must allow running the model using a GPU                                | required   | functional        |
+| W8    | The software must read the input values for the yield function                       | required   | functional        |
+| W9    | The software must correctly calculate the estimated yield values                     | required   | functional        |
+| P1    | The program allows saving an image with detection results to disk storage            | useful     | functional        |
+| P2    | The program adjusts the interface size to the user's monitor dimensions              | useful     | functional        |
+| P3    | To improve readability, the user can change the bounding box color                   | useful     | functional        |
+| O1    | The software automatically performs prediction after loading an image file           | optional   | functional        |
+| O2    | The software should perform detection in no more than 3 seconds                      | optional   | non-functional    |
+| O3    | The interface adjusts the language of the software to the country where it is used   | optional   | functional        |
+| O4    | The interface language is selected from a list                                       | optional   | functional        |
+| O5    | The image file can be loaded directly from a network location                        | optional   | functional        |
+| O6    | The application should perform detection on an image directly from the device camera | optional   | functional        |
 
-Struktura katalogów
+
+## Directory structure
+
 ```{bash}
 ├── main.py
 ├── LICENSE.md
@@ -73,126 +67,123 @@ Struktura katalogów
     └── index.html
 ```
 
-### Architektura rozwoju i uruchomieniowa
-Kontrola wersji: git 2.17.1 \
-IDLE: jupyter lab 3.1.7 \
-Środowisko języka Python: Anaconda 4.10.3 \
-Język oprogramowania: Python 3.7.11 \
-Framework: Flask 1.1.2 \
-Deep Learning: tensorflow 1.13.1 \
-Przetwarzanie obrazu: opencv 4.5.2.52, Albumentations 1.0.3 \
-Analiza danych: numpy 1.21.5, scikit-learn 1.1.3\
-Wizualizacja: matplotlib 3.4.2\
-Monitoring procesów treningu modeli: Tensorboard 2.10.1\
-Środowisko obsługi procesorów graficznych - CUDA 11.4 \
+### Development and Runtime Architecture
+- **Version control**: Git 2.17.1  
+- **IDE**: Jupyter Lab 3.1.7  
+- **Python environment**: Anaconda 4.10.3  
+- **Software language**: Python 3.7.11  
+- **Framework**: Flask 1.1.2  
+- **Deep Learning**: TensorFlow 1.13.1  
+- **Image processing**: OpenCV 4.5.2.52, Albumentations 1.0.3  
+- **Data analysis**: NumPy 1.21.5, scikit-learn 1.1.3  
+- **Visualization**: Matplotlib 3.4.2  
+- **Monitoring of model training processes**: TensorBoard 2.10.1  
+- **Graphics processor support environment**: CUDA 11.4  
 
-Oprogramowanie rozwijano i testowano na maszynie wirtualnej z systemem **Ubuntu 18.04.6 LTS**
+The software was developed and tested on a virtual machine with **Ubuntu 18.04.6 LTS**
 
-## Testowanie wymagań
+## Requirements Testing
 
-**Wymaganie W1** \
-Uruchomienie zawiera się w trzech krokach począwszy od pobrania repozytorium do uruchomienia w wierszu poleceń:
-1. Pobranie repozytorium
-Projekt można pobrać z repozytorium za pomocą komendy:
-```bash
-  git clone https://github.com/DominikMAI/WheatDetectionModel.git
-  cd WheatDetection Model
-```
+**Requirement W1**  
+The launch consists of three steps, from downloading the repository to running the command line:
 
-2. Pobranie wag modelu detekcyjnego
-Do prawidłowego działania modelu potrzebne są wagi. Do pobrania wag potrzebne jest narzędzie curl..
-Wagi z treningu można pobrać z lokalizacji sieciowej:
-```bash
-cd weights
-curl -o weights.h5  -L 'https://drive.google.com/uc?export=download&confirm=yes&id=1t9_0HlgSjF9UpboXfd2sJsuN2anM7Baq'
+1. **Download the repository**  
+   The project can be downloaded from the repository using the command:
+   ```bash
+   git clone https://github.com/DominikMAI/WheatDetectionModel.git
+   cd WheatDetectionModel
+   ```
 
-python main.py --weights_dir=./weights/yolov5.hdf5
-```
+2. **Download the detection model weights**  
+   The model weights are needed for the model to work correctly. To download the weights, the curl tool is required.  
+   The weights from the training can be downloaded from a network location:
+   ```bash
+   cd weights
+   curl -o weights.h5 -L 'https://drive.google.com/uc?export=download&confirm=yes&id=1t9_0HlgSjF9UpboXfd2sJsuN2anM7Baq'
 
-3. Instalacja potrzebnych bibliotek za pomocą polecenia anacondy
-```bash
-conda install --file requirements.txt
-```
+   python main.py --weights_dir=./weights/yolov5.hdf5
+   ```
 
-4. Uruchomienie interfejsu aplikacji (z domyślną konfiguracją).
-```bash
-python main.py
-```
+3. **Install the required libraries using the Anaconda command:**
+   ```bash
+   conda install --file requirements.txt
+   ```
 
-**Wymaganie W2**
-1. Aby podejrzeć dostępne argumenty należy uruchomić program z flagą --help. Użycie argumentu pomocy pozwala na podejrzenie
-dostępnych funkcji oraz podgląd domyślnych wartości argumentów.
-```bash
-python main.py --help
-```
+4. **Run the application interface (with default configuration):**
+   ```bash
+   python main.py
+   ```
 
-**Wymaganie W3**
-Aby odczytać obraz wejściowy należy:
-Uruchomić aplikację
-```bash
-python mainy.py
-```
-1. W adresie przeglądarki internetowej wpisz adres 127.0.0.1:5000 oraz kliknij Enter,
-2. W uruchomionej aplikacji należy kliknąć przycisk "Przeglądaj", w otwartym oknie dialogowym należy wybrać zdjęcie terenowe na lokalnym dysku,
-3. Zdjęcie po zaczytaniu powinno się wyświetlić w interfejsie graficznym aplikacji,
+**Requirement W2**  
+1. To view available arguments, run the program with the `--help` flag. Using the help argument allows you to see the available functions and the default values of the arguments:
+   ```bash
+   python main.py --help
+   ```
 
-**Wymaganie W4**
-1. Wczytaniu zdjęcie terenowe do interfejsu aplikacji
-2. Następni kliknij "Predykcja",
-3. Po ok. 2s wyświetlony obraz w interfejsie powinien zostać zastąpiony obrazem z zasięgami kłosów pszenicy
+**Requirement W3**  
+To read the input image:
 
-**Wymaganie W5**
-Weryfikacja wymagania obejmuje kroki:
-1. Po kliknięciu "Predykcja" należy zwrócić czy model wskazuje poprawnie lokalizację większości kłosów pszenicy
-2. Wsród wyników detekcji nie powinny znaleźć się inne rośliny niż pszenica
+1. **Run the application:**
+   ```bash
+   python main.py
+   ```
+2. In the web browser address bar, enter the address `127.0.0.1:5000` and press Enter.
+3. In the running application, click the "Browse" button, select a field image from the local disk in the opened dialog window.
+4. After loading, the image should be displayed in the application's graphical interface.
 
+**Requirement W4**  
+1. Load the field image into the application interface.
+2. Then click "Prediction".
+3. After about 2 seconds, the displayed image in the interface should be replaced with an image showing the locations of wheat ears.
 
-**Wymaganie W6**
-1. Uruchom aplikację
-2. Przeprowadź detekcję na obrazie z obrazu będącego w katalogu danych testowych 
+**Requirement W5**  
+Verification of the requirement includes the following steps:
 
+1. After clicking "Prediction," check whether the model correctly indicates the location of most wheat ears.
+2. Among the detection results, there should not be any plants other than wheat.
 
-**Wymaganie W7**
-1. Aby wykorzystać w predykcji procesor graficzny, w wierszu poleceń należy umieścić argument gpu.
-Użycie procesora graficznego GPU brak-"", jedno urządzenie - "0", dwa urządzenia -"0,1" itd
-```bash
-python main.py --gpu='0'
-```
+**Requirement W6**  
+1. Run the application.
+2. Perform detection on an image located in the test data directory.
 
-**Wymaganie W8**
-1. Aby wprowadzić wartości należy wpisać wartości w pola kolejno:
-- Średnia liczba ziaren w kłosie - W trakcie pracy terenowej należy odnotować średnią liczbę ziaren w kłosie.
-- Masa 1000 nasion - Masa 1000 nasion w jednostce gram g.
-- Wielkość szkód -  wielkość szkody, odnotowanej wcześniej straty plonu. Stratę należy podać w punktach procentowych.\
+**Requirement W7**  
+1. To use the GPU for prediction, the `gpu` argument must be placed in the command line.  
+   GPU usage: none - `""`, one device - `"0"`, two devices - `"0,1"`, etc.
+   ```bash
+   python main.py --gpu='0'
+   ```
 
+**Requirement W8**  
+1. To input values, enter them in the fields in order:  
+   - **Average number of grains per ear**: During fieldwork, note the average number of grains per ear.  
+   - **1000 grain mass**: Mass of 1000 grains in grams (g).  
+   - **Extent of damage**: Previously noted yield loss. The loss should be given in percentage points.  
 
-**Wymaganie W9**
-1. Po wprowadzeniu wartości należy kliknąć przycisk "Oblicz plonowanie".
-2. Po kliknięciu przycisku natychmiast powinna pojawić się wartość oszacowanego plonu, wraz z całym komunikatem np Plonowanie wynosi: 27.086 dt/ha.\
-Wielkość oszacowanego plonu podawana jest w jednostce dt/ha.
-Dla poszczególnych gatunków pszenicy przyjmujemy różne zakresy wartości:
+**Requirement W9**  
+1. After entering the values, click the "Calculate Yield" button.
+2. After clicking the button, the estimated yield value should immediately appear, along with the full message, e.g., "The yield is: 27.086 dt/ha."  
+   The estimated yield is given in dt/ha.  
+   Different ranges of values are accepted for different wheat species:
 
-| Gatunek         | Liczba kłosów na 1m2 | Liczba ziaren w kłosie | MTN       | Plon ziarna (dt/ha) |
-|-----------------|----------------------|------------------------|-----------|---------------------|
-| Pszenica ozima  | 450-750              | 32.2-50.1              | 41.7-52.9 | 64.5-104.1          |
-| Pszenica jara   | 480-750              | 21.8-31.8              | 35.7-47.1 | 46.5-83.0           |
-| Pszenica twarda | 520-635              | 16.5-22.5              | 48.9-54.5 | 42.5-70.2           |
+| Species         | Number of ears per 1m2 | Number of grains per ear | 1000 Grain Weight (MTN) | Grain Yield (dt/ha) |
+|-----------------|------------------------|--------------------------|-------------------------|---------------------|
+| Winter wheat    | 450-750                | 32.2-50.1                | 41.7-52.9               | 64.5-104.1          |
+| Spring wheat    | 480-750                | 21.8-31.8                | 35.7-47.1               | 46.5-83.0           |
+| Durum wheat     | 520-635                | 16.5-22.5                | 48.9-54.5               | 42.5-70.2           |
 
+**Requirement P1**  
+1. Perform the detection described above.
+2. In the `./temp` directory, there should be a saved graphic file with the detection results.
 
-**Wymaganie P1**
-1. Przeprowadź opisaną powyżej detekcję.
-2. W katalogu ./temp powinien znaleźć się zapisany plik graficzny z wynikami detekcji
+**Requirement P2**  
+1. After launching the application (see Requirement W2) and loading the image, the interface should fully fit within the monitor area.  
+   All interface elements should be visible to the user.
 
-**Wymaganie P2**
-1. Po uruchomieniu aplikacji (patrz wymaganie W2) oraz zaczytaniu obrazu interfejs w całości powinien mieścić się w obszarze monitora
-Wszystkie elementy interfejsu powinny być widoczne dla użytkownika.
-
-**Wymaganie P3**
-1. Aby skonfigurować kolor zasięgów detekcyjnych w poleceniu należy użyć argumentu --bbox_color. 
-```bash
-python main.py --bbox_color='darkred'
-```
-Źródło dostępnych kolorów znajduje się pod adresem: https://matplotlib.org/3.1.1/_images/sphx_glr_named_colors_003.png
-Opcja została wprowadzona, ze względu na to, że różne obrazy mogą mieć różne jasności i zasięgi mogą nie być widoczne 
-w domyślnych kolorach zasięgów.
+**Requirement P3**  
+1. To configure the color of the detection bounding boxes, use the `--bbox_color` argument in the command:
+   ```bash
+   python main.py --bbox_color='darkred'
+   ```
+   A source of available colors can be found at: [Matplotlib Named Colors](https://matplotlib.org/3.1.1/_images/sphx_glr_named_colors_003.png).  
+   This option has been introduced because different images may have different brightness levels, and the default bounding box colors may not be visible.
 
