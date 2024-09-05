@@ -11,6 +11,8 @@ This means that in such a case the yield will be lower and the quality will not 
 If, on the other hand, the ear density is too low, longer ears containing larger grains will not allow a satisfactory yield.
 It is also important that the ear density be uniform for the entire plantation. 
 
+![Logo](https://drive.google.com/uc?export=view&id=16BPGdp1Nu4a_PHs6a8kYxbyVXT6bSwpE)
+
 ### License terms and conditions
 Implementation of the model (YOLO_v3) used under the license: 
 [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/)\
