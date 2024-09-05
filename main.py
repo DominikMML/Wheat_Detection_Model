@@ -154,7 +154,7 @@ def my_form_post():
     print(cache.get("img_width"), cache.get("img_height"))
     return render_template("index.html", mtn = mtn,
                                          slzk = slzk, 
-                                         strata = loss, 
+                                         loss = loss, 
                                          plon_w = round( float(plon), 3),  
                                          image_path = im_path )
 

@@ -292,7 +292,7 @@ def process_image(image_path, model, bbox_c):
     cv2.rectangle(img, (32, 32), (32 + 300, 32 - 100), (0, 0, 0), -1)
     
     img_ = cv2.putText(img, 
-                       f"Liczba klosow: {bbox.shape[0]}",
+                       f"Number of spikes: {bbox.shape[0]}",
                        (30, 30),
                        cv2.FONT_HERSHEY_SIMPLEX, 1, 
                        (255, 255, 255), 1, cv2.LINE_AA)
